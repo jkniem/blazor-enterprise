@@ -1,15 +1,12 @@
 using BethanysPieShopHRM.Api.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc.Formatters;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
-using System.Buffers;
-using System.Linq;
 
 namespace BethanysPieShopHRM.Api
 {
@@ -38,6 +35,8 @@ namespace BethanysPieShopHRM.Api
             services.AddScoped<ITaskRepository, TaskRepository>();
             services.AddScoped<ISurveyRepository, SurveyRepository>();
 
+            services.AddSwaggerGen();
+
             services.AddCors(options =>
             {
                 options.AddPolicy("Open", builder => builder.AllowAnyOrigin().AllowAnyHeader());
@@ -56,7 +55,15 @@ namespace BethanysPieShopHRM.Api
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
+                app.UseSwagger();
+                app.UseSwaggerUI();
             }
+
+            app.UseSwaggerUI(options =>
+            {
+                options.SwaggerEndpoint("/swagger/v1/swagger.json", "v1");
+                options.RoutePrefix = string.Empty;
+            });
 
             app.UseHttpsRedirection();
 

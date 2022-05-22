@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29403.142
+# Visual Studio Version 17
+VisualStudioVersion = 17.1.32421.90
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.UI", "BethanysPieShopHRM.UI\BethanysPieShopHRM.UI.csproj", "{F78BC946-B08B-49D1-8D76-A2E2EB2AAD7E}"
 EndProject
@@ -12,6 +12,12 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.ComponentsLibrary", "BethanysPieShopHRM.ComponentsLibrary\BethanysPieShopHRM.ComponentsLibrary.csproj", "{BD196906-CA10-437E-BBCC-A8BC2A954F13}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BethanysPieShopHRM.Data", "BethanysPieShopHRM.Data\BethanysPieShopHRM.Data.csproj", "{E244331B-E1F3-49CC-8BFB-5A3D2D2AEC3D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Client", "1 - Client", "{CF07C19E-8CC1-441A-9601-239251C975DD}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Backend", "2 - Backend", "{DC68392E-F110-4A67-A869-EDA3BF18251A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Common", "3 - Common", "{55669DAD-2F53-440D-B76D-137B98034F35}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -42,6 +48,13 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F78BC946-B08B-49D1-8D76-A2E2EB2AAD7E} = {CF07C19E-8CC1-441A-9601-239251C975DD}
+		{FA4C51A3-7BF1-4577-8575-B43AED0F9A81} = {DC68392E-F110-4A67-A869-EDA3BF18251A}
+		{369581F2-82E5-45E8-BF3C-9E1CC83DD769} = {55669DAD-2F53-440D-B76D-137B98034F35}
+		{BD196906-CA10-437E-BBCC-A8BC2A954F13} = {55669DAD-2F53-440D-B76D-137B98034F35}
+		{E244331B-E1F3-49CC-8BFB-5A3D2D2AEC3D} = {DC68392E-F110-4A67-A869-EDA3BF18251A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {8FAD6A7F-346C-4B06-9840-20E884BDEB91}
