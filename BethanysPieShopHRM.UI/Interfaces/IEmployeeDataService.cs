@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using BethanysPieShopHRM.Shared;
 
-namespace BethanysPieShopHRM.UI.Services
+namespace BethanysPieShopHRM.UI.Interfaces
 {
     public interface IEmployeeDataService
     {
@@ -11,5 +11,6 @@ namespace BethanysPieShopHRM.UI.Services
         Task<Employee> AddEmployee(Employee employee);
         Task UpdateEmployee(Employee employee);
         Task DeleteEmployee(int employeeId);
+        Employee SavedEmployee { get; set; }
     }
 }

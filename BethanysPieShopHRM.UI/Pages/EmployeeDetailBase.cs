@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using BethanysPieShopHRM.ComponentsLibrary.Map;
 using BethanysPieShopHRM.UI.Services;
 using BethanysPieShopHRM.Shared;
+using BethanysPieShopHRM.UI.Interfaces;
 using Microsoft.AspNetCore.Components;
 
 namespace BethanysPieShopHRM.UI.Pages

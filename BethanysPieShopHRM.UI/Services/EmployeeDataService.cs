@@ -4,7 +4,7 @@ using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using BethanysPieShopHRM.Shared;
-using Microsoft.AspNetCore.Components;
+using BethanysPieShopHRM.UI.Interfaces;
 
 namespace BethanysPieShopHRM.UI.Services
 {
@@ -56,5 +56,7 @@ namespace BethanysPieShopHRM.UI.Services
         {
             await _httpClient.DeleteAsync($"api/employee/{employeeId}");
         }
+
+        public Employee SavedEmployee { get; set; }
     }
 }

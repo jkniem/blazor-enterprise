@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BethanysPieShopHRM.Shared;
+using BethanysPieShopHRM.UI.Interfaces;
 
 namespace BethanysPieShopHRM.UI.Services
 {
@@ -132,6 +133,8 @@ namespace BethanysPieShopHRM.UI.Services
         {
             throw new NotImplementedException();
         }
+
+        public Employee SavedEmployee { get; set; }
 
         public Task UpdateEmployee(Employee employee)
         {

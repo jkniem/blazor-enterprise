@@ -21,7 +21,7 @@ namespace BethanysPieShopHRM.Api.Controllers
         [HttpGet]
         public IActionResult GetTasks()
         {
-            return Ok(_taskRepository.GetAllTasks());
+            return Ok(_taskRepository.GetAllTasks().ToString());
         }
 
         // GET api/<controller>/5

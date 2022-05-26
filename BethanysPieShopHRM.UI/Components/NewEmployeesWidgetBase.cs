@@ -1,9 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BethanysPieShopHRM.UI.Services;
 using BethanysPieShopHRM.Shared;
+using BethanysPieShopHRM.UI.Interfaces;
 using Microsoft.AspNetCore.Components;
 
 namespace BethanysPieShopHRM.UI.Components

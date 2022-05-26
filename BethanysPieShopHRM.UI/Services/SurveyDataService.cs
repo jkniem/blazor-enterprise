@@ -1,14 +1,12 @@
-﻿using BethanysPieShopHRM.UI.Services;
-using BethanysPieShopHRM.Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Net.Http;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
+using BethanysPieShopHRM.Shared;
+using BethanysPieShopHRM.UI.Interfaces;
 
-namespace BethanysPieShopHRM.UI.Data
+namespace BethanysPieShopHRM.UI.Services
 {
     public class SurveyDataService : ISurveyDataService
     {

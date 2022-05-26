@@ -1,10 +1,8 @@
-﻿using BethanysPieShopHRM.Shared;
-using System;
-using System.Collections.Generic;
-using System.Linq;
+﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using BethanysPieShopHRM.Shared;
 
-namespace BethanysPieShopHRM.UI.Services
+namespace BethanysPieShopHRM.UI.Interfaces
 { 
     public interface IExpenseDataService
     {

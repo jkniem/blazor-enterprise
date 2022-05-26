@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using BethanysPieShopHRM.UI.Services;
 using BethanysPieShopHRM.Shared;
+using BethanysPieShopHRM.UI.Interfaces;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 
@@ -50,7 +51,11 @@ namespace BethanysPieShopHRM.UI.Pages
 
             int.TryParse(EmployeeId, out var employeeId);
 
-            if (employeeId == 0) //new employee is being created
+            if (EmployeeDataService.SavedEmployee != null)
+            {
+                Employee = EmployeeDataService.SavedEmployee;
+            }
+            else if (employeeId == 0) //new employee is being created
             {
                 //add some defaults
                 Employee = new Employee { CountryId = 1, JobCategoryId = 1, BirthDate = DateTime.Now, JoinedDate = DateTime.Now };
@@ -108,6 +113,12 @@ namespace BethanysPieShopHRM.UI.Pages
             Message = "Deleted successfully";
 
             Saved = true;
+        }
+
+        protected void TempSave()
+        {
+            EmployeeDataService.SavedEmployee = Employee;
+            NavigationManager.NavigateTo("/employeeoverview");
         }
 
         protected void NavigateToOverview()
