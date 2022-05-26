@@ -2,11 +2,11 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using BethanysPieShopHRM.UI.Services;
 using BethanysPieShopHRM.Shared;
 using BethanysPieShopHRM.UI.Interfaces;
 using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
+using Microsoft.AspNetCore.ProtectedBrowserStorage;
 
 namespace BethanysPieShopHRM.UI.Pages
 {
@@ -23,6 +23,9 @@ namespace BethanysPieShopHRM.UI.Pages
 
         [Inject] 
         public NavigationManager NavigationManager { get; set; }
+
+        [Inject]
+        public ProtectedLocalStorage LocalStorageService { get; set; } 
 
         [Parameter]
         public string EmployeeId { get; set; }
@@ -51,9 +54,11 @@ namespace BethanysPieShopHRM.UI.Pages
 
             int.TryParse(EmployeeId, out var employeeId);
 
-            if (EmployeeDataService.SavedEmployee != null)
+            var savedEmployee = await LocalStorageService.GetAsync<Employee>("employee");
+
+            if (savedEmployee?.EmployeeId == 0)
             {
-                Employee = EmployeeDataService.SavedEmployee;
+                Employee = savedEmployee;
             }
             else if (employeeId == 0) //new employee is being created
             {
@@ -115,10 +120,11 @@ namespace BethanysPieShopHRM.UI.Pages
             Saved = true;
         }
 
-        protected void TempSave()
+        protected async Task<Task> TempSave()
         {
-            EmployeeDataService.SavedEmployee = Employee;
+            await LocalStorageService.SetAsync("employee", Employee);
             NavigationManager.NavigateTo("/employeeoverview");
+            return Task.CompletedTask;
         }
 
         protected void NavigateToOverview()

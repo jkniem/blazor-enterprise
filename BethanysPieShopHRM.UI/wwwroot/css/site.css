@@ -313,3 +313,7 @@ a[data-toggle="collapse"] {
 #sidebar .toggle-show {
     display: block;
 }
+
+.active {
+    font-weight: bold;
+}
